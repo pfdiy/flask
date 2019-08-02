@@ -219,4 +219,3 @@ def admin_cfg(site_id):
     form.cfg_add.data = site.cfg_add
     form.cfg_tel.data = site.cfg_tel
     return render_template('admin/admin_config.html', form=form)
-

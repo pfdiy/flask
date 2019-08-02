@@ -5,7 +5,7 @@
 
 
 from flask import Blueprint, render_template, current_app, request, \
-    url_for, send_file, send_from_directory
+    url_for, send_file, send_from_directory,redirect
 from flask_ckeditor import upload_success, upload_fail
 from app.utils import allowed_file
 from app.models.models import Post, Category
@@ -111,3 +111,8 @@ def random_filename(filename):
     ext = os.path.splitext(filename)[1]
     new_filename = uuid.uuid4().hex + ext
     return new_filename
+
+@index_bp.route('update/all')
+def update_all():
+    cache.clear()
+    return redirect(url_for('admin.index'))

@@ -22,7 +22,7 @@ class BaseConfig(object):
 
     APP_UPLOAD_PATH = os.path.join(basedir, 'app/uploads')
     APP_ALLOWED_IMAGE_EXTENSIONS = ['png', 'jpg', 'jpeg']
-    MAX_CONTENT_LENGTH = 2 * 900 * 900
+    MAX_CONTENT_LENGTH = 1 * 900 * 900
     PER_PAGE = 10
     POST_PER_PAGE = 20
 

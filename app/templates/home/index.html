@@ -54,7 +54,7 @@
                             {% for post in posts %}{% if post.recommend == True %}
                         <div class="swiper-slide" style="height:380px;">
 <a class="has-text-black" href="{{ url_for('.uuid_post',slug=slug) }}{{ post.slug }}"
-   target="_blank "><img style="height:380px;" src="{{ post.photo }}" alt=""><span>{{
+   target="blank"><img style="height:380px;" src="{{ post.photo }}" alt=""><span>{{
     post.title|truncate(20)}}</span></a></div>
                             {% endif %}
                             {% endfor %}
@@ -70,7 +70,7 @@
                 </div>
              <ul>
                         {% for items in pagination.items %}
-                        <li><a class="has-text-black" href="{{ url_for('.uuid_post',slug=slug) }}{{ items.slug }}" target="_blank ">{{ items.title|truncate(20) }}</a><span
+                        <li><a class="has-text-black" href="{{ url_for('.uuid_post',slug=slug) }}{{ items.slug }}" target="blank">{{ items.title|truncate(20) }}</a><span
                                 class="is-pulled-right">[{{ items.timestamp.strftime
                                 ("%m-%d") }}]</span></li>
                     {% endfor %}
@@ -87,7 +87,7 @@
 
                   <ul>
                    {% for items in pagination01.items %}
-                        <li><a class="has-text-black" href="{{ url_for('.uuid_post',slug=slug) }}{{ items.slug }}" target="_blank ">{{ items.title|truncate(20) }}</a><span
+                        <li><a class="has-text-black" href="{{ url_for('.uuid_post',slug=slug) }}{{ items.slug }}" target="blank">{{ items.title|truncate(20) }}</a><span
                                 class="is-pulled-right">[{{ items.timestamp.strftime
                                 ("%m-%d") }}]</span></li>
                     {% endfor %}
@@ -104,7 +104,7 @@
 
   <ul>
                     {% for items in pagination02.items %}
-                        <li><a class="has-text-black" href="{{ url_for('.uuid_post',slug=slug) }}{{ items.slug }}" target="_blank ">{{ items.title|truncate(20) }}</a><span
+                        <li><a class="has-text-black" href="{{ url_for('.uuid_post',slug=slug) }}{{ items.slug }}" target="blank">{{ items.title|truncate(20) }}</a><span
                                 class="is-pulled-right">[{{ items.timestamp.strftime
                                 ("%m-%d") }}]</span></li>
                     {% endfor %}
