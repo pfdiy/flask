@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>{{ site.cfg_name }}-管理系统</title>
+<link rel="icon" href="favicon.ico" type="image/ico">
+<meta name="keywords" content="{{ cfg_key }}">
+<meta name="description" content="{{ cfg_des }}">
+<link href="{{ url_for('static', filename='admin/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='admin/css/materialdesignicons.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='admin/css/style.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='admin/js/jconfirm/jquery-confirm.min.css') }}" rel="stylesheet">
+</head>
+
+
+{% block content %}
+    <body>
+    <div class="lyear-layout-web">
+        <div class="lyear-layout-container">
+            <!--左侧导航-->
+            <aside class="lyear-layout-sidebar">
+
+                <!-- logo -->
+                <div id="logo" class="sidebar-header">
+                    <a href="index.html"><img src="{{ url_for('static',filename='admin/images/logo-sidebar.png') }}" alt=""/></a>
+                </div>
+                <div class="lyear-layout-sidebar-scroll">
+
+                    <nav class="sidebar-main">
+                        <ul class="nav nav-drawer">
+                            <li class="nav-item active"><a href="{{ url_for('.index')
+                                    }}"><i
+                                    class="mdi mdi-home"></i> 后台首页</a></li>
+                            <li class="nav-item nav-item-has-subnav">
+                                <a href="javascript:void(0)"><i
+                                        class="mdi mdi-note-text"></i>新闻管理</a>
+                                <ul class="nav nav-subnav">
+                                    <li><a href="{{ url_for('.add_post') }}">添加新闻</a>
+                                    </li>
+                                    <li><a href="{{ url_for('.post_list') }}">文章列表</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item nav-item-has-subnav">
+                                <a href="javascript:void(0)"><i
+                                        class="mdi mdi mdi-format-align-justify"></i>分类管理</a>
+                                <ul class="nav nav-subnav">
+                                    <li><a href="{{ url_for('.add_category') }}">添加分类</a>
+                                    </li>
+                                    <li><a href="{{ url_for('.category_list') }}">分类列表</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item nav-item-has-subnav">
+                                <a href="javascript:void(0)"><i
+                                        class="mdi mdi-file-image"></i>幻灯管理</a>
+                                <ul class="nav nav-subnav">
+                                    <li><a href="{{ url_for('.add_post') }}">幻灯列表</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <li class="nav-item nav-item-has-subnav">
+                                <a href="javascript:void(0)"><i
+                                        class="mdi mdi-settings"></i> 系统管理</a>
+                                <ul class="nav nav-subnav">
+                                    <li><a href="{{ url_for('.admin_cfg',site_id=site.id)
+                                    }}">网站配置</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+            </aside>
+            <!--End 左侧导航-->
+
+            <!--头部信息-->
+            <header class="lyear-layout-header">
+
+                <nav class="navbar navbar-default">
+                    <div class="topbar">
+
+                        <div class="topbar-left">
+                            <div class="lyear-aside-toggler">
+                                <span class="lyear-toggler-bar"></span>
+                                <span class="lyear-toggler-bar"></span>
+                                <span class="lyear-toggler-bar"></span>
+                            </div>
+                            <span class="navbar-page-title"> 后台首页 </span>
+                        </div>
+
+                        <ul class="topbar-right">
+                            <li class="dropdown dropdown-profile">
+                                <a href="javascript:void(0)" data-toggle="dropdown">
+                                    <img class="img-avatar img-avatar-48 m-r-10"
+                                         src="{{ url_for('static',
+                                         filename='admin/images/users/avatar.png') }}"
+                                         alt=""/>
+                                    <span>契丹牧耕<span class="caret"></span></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="lyear_pages_profile.html"><i
+                                            class="mdi mdi-account"></i> 个人信息</a></li>
+                                    <li><a href="lyear_pages_edit_pwd.html"><i
+                                            class="mdi mdi-lock-outline"></i> 修改密码</a>
+                                    </li>
+                                    <li><a href="javascript:void(0)"><i
+                                            class="mdi mdi-delete"></i> 清空缓存</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/auth/logout"><i
+                                            class="mdi mdi-logout-variant"></i> 退出登录</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </nav>
+
+            </header>
+            <!--End 头部信息-->
+{% endblock %}
+        </div>
+    </div>
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='admin/js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='admin/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='admin/js/perfect-scrollbar.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='admin/js/main.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='admin/js/jconfirm/jquery-confirm.min.js') }}"></script>
+{% endblock %}
+</body>
+</html>

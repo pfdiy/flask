@@ -1,0 +1,116 @@
+{% extends 'admin/base.html' %}
+
+{% import "admin/_macros.html" as macros %}
+
+{% block content %}
+{{ super() }}
+        <!--页面主要内容-->
+    <main class="lyear-layout-content">
+
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-toolbar clearfix">
+                <form class="pull-right search-bar" method="get" action="#!" role="form">
+                  <div class="input-group">
+                    <div class="input-group-btn">
+                      <input type="hidden" name="search_field" id="search-field" value="title">
+                      <button class="btn btn-default dropdown-toggle" id="search-btn" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+                      标题 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li> <a tabindex="-1" href="javascript:void(0)" data-field="title">标题</a> </li>
+                        <li> <a tabindex="-1" href="javascript:void(0)" data-field="cat_name">栏目</a> </li>
+                      </ul>
+                    </div>
+                    <input type="text" class="form-control" value="" name="keyword" placeholder="请输入名称">
+                  </div>
+                </form>
+                <div class="toolbar-btn-action">
+                  <a class="btn btn-primary m-r-5" href="{{ url_for('.add_post') }}"><i
+                          class="mdi
+                  mdi-plus"></i>新增</a>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>
+
+                          <label class="lyear-checkbox checkbox-primary">
+                            <input type="checkbox" id="check-all"><span></span>
+                          </label>
+                        </th>
+                        <th>编号</th>
+                          <th>ID</th>
+                        <th>标题</th>
+                        <th>分类</th>
+                          <th>新闻来源</th>
+                        <th>发布者</th>
+                        <th>推荐</th>
+                        <th>发布时间</th>
+                        <th>编辑</th>
+                        <th>删除</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                             {% for post in posts %}
+                      <tr>
+
+                        <td>
+                          <label class="lyear-checkbox checkbox-primary">
+                            <input type="checkbox" name="ids[]" value="1"><span></span>
+                          </label>
+                        </td>
+                        <td>{{ loop.index + ((pagination.page - 1)*config.POST_PER_PAGE) }}</td>
+                        <td>{{ post.id }}</td>
+                        <td> <a href="{{ url_for('.uuid_post',slug=slug) }}{{ post.slug }}" target="_blank ">{{ post.title|truncate(20) }}</a></td>
+                        <td> {{ post.category.name }}</td>
+                        <td> {{ post.sources }}</td>
+                        <td>{{ post.author }}</td>
+                          {% if  post.recommend  == True %}
+                        <td><span class="label label-success">首页显示</span></td>
+                          {% else %}
+                          <td><span class="label label-danger">未显示</span></td>
+                          {% endif %}
+                        <td> {{ post.timestamp.strftime("%Y-%m-%d") }}</td>
+                        <td >
+                            <div class="btn-group btn-group-justified">
+<a class="btn btn-default btn-xs btn-warning" href="{{ url_for('.edit_post',
+post_id=post.id) }}">编辑</a>
+                          </div></td>
+                        <td>
+                          <div >
+<form class="btn-group btn-group-justified" method="post" action="{{ url_for('.delete_post',post_id=post.id)}}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+    <button type="submit" class="btn btn-default btn-xs  btn-danger "
+            onclick="return confirm('确定删除?');">删除
+                </button>
+</form>
+                        </td>
+
+                      </tr>
+  {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+{%if pagination%}
+    <div class="pagination">
+        {{ macros.pagination_widget(pagination, '.post_list') }}
+    </div>
+{% endif %}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+    <!--End 页面主要内容-->
+{% endblock %}

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.cfg_des }}" />
+    <meta name="keywords"  content="{{ site.cfg_key }}">
+    <title>公共品牌产品下载 - {{site.cfg_name}}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
+    {% assets 'css_all' %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+    {% endassets %}
+</head>
+<body>
+<div class="container">
+    <div class="hero is-medium">
+        <div class="hero-head">
+            <div class="container">
+                <div class="navbar-brand">
+                    <img src="{{ url_for('static', filename='home/images/head.png') }}" alt="Logo">
+                </div>
+            </div>
+            </nav>
+        </div>
+        <div class="hero-foot">
+            <nav class="tabs is-fullwidth">
+                <div class="container">
+                     <ul class="title tite_color has-text-white	nav-title is-6">
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/category/qidanmugeng">契丹牧耕</a></li>
+                        <li><a href="/category/yinxiangzuoqi">印象左旗</a></li>
+                        <li><a href="/category/zuoqiwenhua">左旗文化</a></li>
+                        <li><a href="/xiazai">公共品牌产品下载</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<section>
+    <div class="container is-widescreen">
+        <div class="columns  is-centered cols is-multiline is-marginless">
+            <div class="column is-child is-10">
+                <div class="container">
+                    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">企业列表下载</li>
+                            <li>企业介绍下载</li>
+                            <li>产品卖点下载</li>
+                            <li>产品主图下载</li>
+                            <li>产品详情页下载</li>
+                            <li>产品价格表下载</li>
+                            <li>产业背景介绍下载</li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item layui-show">
+                                <table class="layui-table">
+                                    <colgroup>
+                                         <col width="200">
+                                         <col width="200">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>更新时间</th>
+                                        <th>产品下载</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                             {% set category = Category.query.get(4) %}
+                                          {% for items in category.posts %}
+                                    <tr>
+                                        <td>{{ items.title|truncate(20) }}</td>
+                                        <td>{{ items.timestamp.strftime('%Y-%m-%d') }}</td>
+                                        <td>
+                                            <button type="button" class="layui-btn layui-btn-primary layui-btn-xs">
+                                            <i class="layui-icon">&#xe601;
+                                            </i><a href="{{ items.down_url }}
+                                             " target="_blank" >点此下载</a>
+                                            </button></td>
+                                    </tr>
+                                         {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="layui-tab-item">
+                                <table class="layui-table">
+                                    <colgroup>
+                                         <col width="200">
+                                        <col width="200">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>更新时间</th>
+                                        <th>产品下载</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                             {% set category = Category.query.get(5) %}
+                                          {% for items in category.posts %}
+                                    <tr>
+                                        <td>{{ items.title|truncate(20) }}</td>
+                                        <td>{{ items.timestamp.strftime('%Y-%m-%d') }}</td>
+                                        <td>
+                                            <button type="button" class="layui-btn layui-btn-primary layui-btn-xs">
+                                            <i class="layui-icon">&#xe601;
+                                            </i><a href="{{ items.down_url }}
+                                             " target="_blank" >点此下载</a>
+                                            </button></td>
+                                    </tr>
+                                         {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="layui-tab-item">
+                                <table class="layui-table">
+                                    <colgroup>
+                                         <col width="200">
+                                        <col width="200">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>更新时间</th>
+                                        <th>产品下载</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                             {% set category = Category.query.get(6) %}
+                                          {% for items in category.posts %}
+                                    <tr>
+                                        <td>{{ items.title|truncate(20) }}</td>
+                                        <td>{{ items.timestamp.strftime('%Y-%m-%d') }}</td>
+                                        <td>
+                                            <button type="button" class="layui-btn layui-btn-primary layui-btn-xs">
+                                            <i class="layui-icon">&#xe601;
+                                            </i><a href="{{ items.down_url }}
+                                             " target="_blank" >点此下载</a>
+                                            </button></td>
+                                    </tr>
+                                         {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="layui-tab-item">
+                                   <table class="layui-table">
+                                    <colgroup>
+                                         <col width="200">
+                                        <col width="200">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>更新时间</th>
+                                        <th>产品下载</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                             {% set category = Category.query.get(7) %}
+                                          {% for items in category.posts %}
+                                    <tr>
+                                        <td>{{ items.title|truncate(20) }}</td>
+                                        <td>{{ items.timestamp.strftime('%Y-%m-%d') }}</td>
+                                        <td>
+                                            <button type="button" class="layui-btn layui-btn-primary layui-btn-xs">
+                                            <i class="layui-icon">&#xe601;
+                                            </i><a href="{{ items.down_url }}
+                                             " target="_blank" >点此下载</a>
+                                            </button></td>
+                                    </tr>
+                                         {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="layui-tab-item">
+                                <table class="layui-table">
+                                    <colgroup>
+                                         <col width="200">
+                                        <col width="200">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>更新时间</th>
+                                        <th>产品下载</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                             {% set category = Category.query.get(8) %}
+                                          {% for items in category.posts %}
+                                    <tr>
+                                        <td>{{ items.title|truncate(20) }}</td>
+                                        <td>{{ items.timestamp.strftime('%Y-%m-%d') }}</td>
+                                        <td>
+                                            <button type="button" class="layui-btn layui-btn-primary layui-btn-xs">
+                                            <i class="layui-icon">&#xe601;
+                                            </i><a href="{{ items.down_url }}
+                                             " target="_blank" >点此下载</a>
+                                            </button></td>
+                                    </tr>
+                                         {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="layui-tab-item">
+                                <table class="layui-table">
+                                    <colgroup>
+                                        <col width="200">
+                                        <col width="200">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>更新时间</th>
+                                        <th>产品下载</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                             {% set category = Category.query.get(9) %}
+                                          {% for items in category.posts %}
+                                    <tr>
+                                        <td>{{ items.title|truncate(20) }}</td>
+                                        <td>{{ items.timestamp.strftime('%Y-%m-%d') }}</td>
+                                        <td>
+                                            <button type="button" class="layui-btn layui-btn-primary layui-btn-xs">
+                                            <i class="layui-icon">&#xe601;
+                                            </i><a href="{{ items.down_url }}
+                                             " target="_blank" >点此下载</a>
+                                            </button></td>
+                                    </tr>
+                                         {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="layui-tab-item">
+                                <table class="layui-table">
+                                    <colgroup>
+                                        <col width="200">
+                                        <col width="200">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>更新时间</th>
+                                        <th>产品下载</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                             {% set category = Category.query.get(10) %}
+                                          {% for items in category.posts %}
+                                    <tr>
+                                        <td>{{ items.title|truncate(20) }}</td>
+                                        <td>{{ items.timestamp.strftime('%Y-%m-%d') }}</td>
+                                        <td>
+                                            <button type="button" class="layui-btn layui-btn-primary layui-btn-xs">
+                                            <i class="layui-icon">&#xe601;
+                                            </i><a href="{{ items.down_url }}
+                                             " target="_blank" >点此下载</a>
+                                            </button></td>
+                                    </tr>
+                                         {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="columns is-marginless footer">
+                <div class="column is-hidden-mobile is-4">
+                    <div class="container">
+                        <div class="content has-text-right">
+                            <div>
+                                    <img src="{{ url_for('static', filename='home/images/footer_left.png')
+                        }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-hidden-mobile is-4">
+                    <div class="container ">
+                        <div class="has-text-centered">
+                            <nav class="level">
+                                <p class="level-item has-text-black has-text-centered">
+                                    <a class="has-text-black link
+                                    is-info" href="/">网站首页</a>
+                                </p>
+                                |
+                                <p class="level-item has-text-black has-text-centered">
+                                    <a class="has-text-black link
+                                    is-info"
+                                       href="/category/qidanmugeng">契丹牧耕</a>
+                                </p>
+                                |
+                                <p class="level-item has-text-black has-text-centered">
+                                    <a class="has-text-black link
+                                    is-info" href="/category/yinxiangzuoqi">印象左旗</a>
+                                </p>
+                                |
+                                <p class="level-item has-text-black has-text-centered">
+                                    <a class="has-text-black link
+                                    is-info" href="/category/zuoqiwenhua">左旗文化</a>
+                                </p>
+                            </nav>
+                            <nav class="level is-marginless">
+                                <div class="level-item has-text-centered is-hidden-mobile">
+                                    <div>
+                                        <p class="heading"><img
+                                                src="{{ url_for('static',
+                                                filename='home/images/erweima.png') }}"
+                                                alt=""></p>
+                                        <p class="subtitle is-6">公 众 号</p>
+                                    </div>
+                                </div>
+                                <div class="level-item has-text-centered">
+                                    <div>
+                                        <p class="heading"><img
+                                                src="{{ url_for('static',
+                                                filename='home/images/douyin.png')}}"
+                                                alt=""></p>
+                                        <p class="subtitle is-6">抖 音 号</p>
+                                    </div>
+                                </div>
+                                <div class="level-item has-text-centered">
+                                    <div>
+                                        <p class="heading"><img
+                                                src="{{ url_for('static',
+                                                filename='home/images/toutiao.png') }}"
+                                                alt=""></p>
+                                        <p class="subtitle is-6">头 条 号</p>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="container">
+                        <div class="content has-text-left">
+                            <strong>联系电话</strong>
+                            <h4 class="title is-4">{{site.cfg_tel}}</h4>
+                            <strong>联系地址</strong>
+                            <p>
+                                {{ site.cfg_add }}
+                            </p>
+                            <p>{{site.cfg_beian}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="{{ url_for('static', filename='home/js/layui/layui.js') }}"></script>
+<script>
+    layui.use('element', function () {
+        var element = layui.element;
+
+        element.on('tab(demo)', function (data) {
+            console.log(data);
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+{{ super() }}
+        <!--页面主要内容-->
+    <main class="lyear-layout-content">
+
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-toolbar clearfix">
+                <form class="pull-right search-bar" method="get" action="#!" role="form">
+                  <div class="input-group">
+                    <div class="input-group-btn">
+                      <input type="hidden" name="search_field" id="search-field" value="title">
+                      <button class="btn btn-default dropdown-toggle" id="search-btn" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+                      标题 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li> <a tabindex="-1" href="javascript:void(0)" data-field="title">标题</a> </li>
+                        <li> <a tabindex="-1" href="javascript:void(0)" data-field="cat_name">栏目</a> </li>
+                      </ul>
+                    </div>
+                    <input type="text" class="form-control" value="" name="keyword" placeholder="请输入名称">
+                  </div>
+                </form>
+                <div class="toolbar-btn-action">
+                  <a class="btn btn-primary m-r-5" href="{{ url_for('.add_category')
+                          }}"><i
+                          class="mdi
+                  mdi-plus"></i>新增</a>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th class="text-center">编号</th>
+                        <th>标题</th>
+                        <th>编辑</th>
+                        <th>删除</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                             {% for category in categorys %}
+
+                        <td class="text-center">{{ category.id }}</td>
+
+                        <td><a href="{{ url_for('.show_category',category_id=category.id) }}">{{ category.name }}</a></td>
+                        <td >
+                           <div class="btn-group btn-group-justified">
+<a class="btn btn-default btn-xs btn-warning" href="{{ url_for('.edit_category',category_id=category.id) }}">编辑</a>
+                          </div></td>
+                        <td>
+                          <div >
+<form class="btn-group btn-group-justified" method="post" action="{{ url_for('.delete_category',category_id=category.id)}}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+    <button type="submit" class="btn btn-default btn-xs  btn-danger "
+            onclick="return confirm('确定删除?');">删除
+                </button>
+</form>
+                        </td>
+
+                      </tr>
+  {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </main>
+    <!--End 页面主要内容-->
+{% endblock %}

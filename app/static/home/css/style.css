@@ -1,0 +1,140 @@
+body {
+    font-family: -apple-system, SF UI Text, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+    background: #cbcbcb;
+}
+
+.head_img {
+    height: 400px;
+}
+
+span {
+    color: #666666;
+}
+
+.cols {
+    padding-top: 2rem;
+    background: #ffffff;
+}
+
+.coln ul {
+    padding: 0.6rem 0.2rem;
+}
+
+.coln ul li {
+    padding-left: 1rem;
+    line-height: 2rem;
+    background: url(https://www.gov.cn/2014xinban/static/images/Point.png) no-repeat left center;
+}
+
+.tite_img {
+    position: relative;
+}
+
+.tite_img p {
+    position: absolute;
+    top: 1.3rem;
+    left: 5rem;
+    font-weight: bold;
+    color: #639033;
+}
+
+.tite_img span {
+    position: absolute;
+    top: 1.7rem;
+    right: 3rem;
+    font-weight: bold;
+}
+
+.tite_img span a {
+    color: #639033;
+}
+
+.tite_color {
+    background-color: #639033;
+}
+
+.swiper-slide span {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 10;
+    height: 34px;
+    background: rgba(0, 0, 0, 0.6);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#80000000', endColorstr='#80000000') \9;
+    display: block;
+    line-height: 34px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    overflow: hidden;
+    margin-left: 10px;
+    font-family: "Microsoft YaHei";
+}
+
+.footer {
+    height: 300px;
+    width: 1430px;
+    border-top: 0.1rem solid;
+    border-bottom: 2rem solid;
+    background: #f3f4f6;
+    border-color: #639033;
+    font-size: 0.9rem;
+}
+
+.level-w {
+    width: 400px;
+}
+
+.tabs a {
+    color: #ffffff;
+}
+
+.f10 {
+    margin-top: 200px;
+    font-size: 0.8rem;
+}
+
+.category_list ul {
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.category_list ul li {
+    line-height: 35px;
+    border-bottom: 1px dashed #e3e3e3;
+    padding: 0px 15px;
+    background: url(http://mugeng.net/static/home/lidot.png) no-repeat left center;
+}
+
+
+@media screen and (max-width: 768px) {
+    .head_img {
+        height: 150px;
+    }
+
+    .tite_img p {
+        position: absolute;
+        top: 0.2rem;
+        left: 4rem;
+        color: #639033;
+    }
+
+    .tite_img span {
+        position: absolute;
+        top: 0.5rem;
+        right: 4rem;
+    }
+
+    .footer {
+        height: 280px;
+        width: 414px;
+        border-top: 0.1rem solid;
+        border-bottom: 2rem solid;
+        background: #f3f4f6;
+        border-color: #639033;
+        font-size: 0.9rem;
+    }
+
+}

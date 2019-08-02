@@ -1,0 +1,90 @@
+
+{% extends 'admin/base.html' %}
+
+{% block content %}
+{{ super() }}
+    <!--页面主要内容-->
+    <main class="lyear-layout-content">
+
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <ul class="nav nav-tabs page-tabs">
+                <li class="active"> <a href="#!">基本</a> </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active">
+
+                  <form  method="post" name="edit-form" class="edit-form">
+                      {{ form.csrf_token }}
+                    <div class="form-group">
+                        {{ form.cfg_name.label }}
+                        {{ form.cfg_name(class="form-control")}}
+                        <small class="help-block">调用方式：<code>config('site.cfg_name')</code></small>
+                    </div>
+                    <div class="form-group">
+                      <label for="web_site_logo">LOGO图片</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="web_site_logo" id="web_site_logo" value="/home/images/logo.png" />
+                        <div class="input-group-btn"><button class="btn btn-default" type="button">上传图片</button></div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form.cfg_key.label }}
+                        {{ form.cfg_key(class="form-control")}}
+                      <small class="help-block">网站搜索引擎关键字 调用方式：<code>config('site.cfg_key')
+                      </code></small>
+                    </div>
+                    <div class="form-group">
+                      {{ form.cfg_des.label }}
+                        {{ form.cfg_des(class="form-control")}}
+                      <small class="help-block">网站描述，有利于搜索引擎抓取相关信息 调用方式：<code>config ('site.cfg_des')
+                      </code></small>
+                    </div>
+                    <div class="form-group">
+                      {{ form.cfg_copy.label }}
+                        {{ form.cfg_copy(class="form-control")}}
+                      <small class="help-block">调用方式：<code>config('site.cfg_copy')
+                      </code></small>
+                    </div>
+                    <div class="form-group">
+                      {{ form.cfg_add.label }}
+                        {{ form.cfg_add(class="form-control")}}
+                      <small class="help-block">调用方式：<code>config('site.cfg_add')
+                      </code></small>
+                    </div>
+                    <div class="form-group">
+                      {{ form.cfg_tel.label }}
+                        {{ form.cfg_tel(class="form-control")}}
+                      <small class="help-block">调用方式：<code>config('site.cfg_tel')
+                      </code></small>
+                    </div>
+                    <div class="form-group">
+                          <div class="form-group">
+                      <label for="web_site_copyright">备案信息</label>
+                        {{ form.cfg_beian(class="form-control")}}
+                        <small class="help-block">调用方式：<code>config('site.cfg_beian')
+                        </code></small>
+                    </div>
+
+                      {{ form.submit(class="btn btn-primary m-r-5")}}
+
+                      <button type="button" class="btn btn-default" onclick="javascript:history.back(-1);return false;">返 回</button>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+    <!--End 页面主要内容-->
+{% endblock %}

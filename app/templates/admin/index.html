@@ -1,0 +1,55 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+    {{ super() }}
+    <!--页面主要内容-->
+    <main class="lyear-layout-content">
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="alert alert-warning" role="alert">
+                        <p>欢迎来到后台管理系统，左侧为菜单区域，右侧为功能区。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card">
+                            <div class="card-header bg-primary">
+                                <h4>注意事项</h4>
+                                <ul class="card-actions">
+                                    <li>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <h3>关于排版</h3>
+                                <p>强烈推荐使用[排版助手]来编辑所有文章.即使你在 word 下面已经编辑好
+                                    .最好在复制到排版助手当中重新排版一下.</p>
+                                <p>在使用[排版助手]中,会出现多一个空行的问题,请手动删除.</p>
+                                <p>网站使用排版助手后,系统会自动两端对齐.无需过多修改.</p>
+                                <p>排版助手的下载地址在下方↓↓↓↓</p>
+                                <p>下载地址:<a href="https://www.xiazaiba.com/html/360.html"
+                                           target="_blank">https://www.xiazaiba.com/html/360.html</a>
+                                </p>
+                            </div>
+                            <div class="card-body">
+                                <h3>关于上传图片</h3>
+                                    <p>轮播尺寸为660x350,超过尺寸,网站会变形.</p>
+                                    <p>正文图片宽度不应超过900.否则体验效果会很差.</p>
+                                    <p>上传图片大小,应该控制在2M内,超过会报413错误.</p>
+                            </div>
+                            <div class="card-body">
+                                <h3>关于上传视频</h3>
+                                    <p>理论上支持所有视频,但是尽量转换为主流格式,推荐视频格式[webm][MP4][avi],不推荐的格式为[swf]格式. 其他从录像机提取出来的原生格式不会支持.</p>
+                                <p>同时还支持主流视频网站的视频.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+    <!--End 页面主要内容-->
+{% endblock %}
