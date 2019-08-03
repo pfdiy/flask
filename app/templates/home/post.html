@@ -10,7 +10,7 @@
     <meta name="applicable-device" content="pc,mobile">
     <meta name="MobileOptimized" content="width"/>
     <meta name="HandheldFriendly" content="true"/>
-    <meta name="mobile-agent" content="format=html5;url=http://mugeng.net/p/{{ post.slug }}">
+    <meta name="mobile-agent" content="format=html5;url=https://mugeng.net/p/{{ post.slug }}">
     <title>{{ post.title }} - {{site.cfg_name}}</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
     {% assets 'css_all' %}
@@ -60,7 +60,7 @@
                 </div>
                 <div class="has-text-centered is-hidden-mobile">
                     <p class="f10">扫一扫在手机打开当前页</p>
-                    <img src="{{ qrcode("http://mugeng.net" +"/p/" + post.slug,box_size=5) }}"></p>
+                    <img src="{{ qrcode("https://mugeng.net" +"/p/" + post.slug,box_size=5) }}"></p>
                 </div>
 
             </div>
