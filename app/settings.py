@@ -28,10 +28,10 @@ class BaseConfig(object):
 
 
 class DevelopmentConfig(BaseConfig):
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:postgres@127.0.0.1/postgres'
-    # SQLALCHEMY_DATABASE_URI = 'postgresql://root:root@db/cms'
-    CACHE_REDIS_URL = 'redis://user:123@localhost:6379/0'
-    # CACHE_REDIS_URL = 'redis://user:kml7oQCKE5pXMwyz@redis:6379/0'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:postgres@127.0.0.1/postgres'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://root:root@db/cms'
+    # CACHE_REDIS_URL = 'redis://user:123@localhost:6379/0'
+    CACHE_REDIS_URL = 'redis://user:kml7oQCKE5pXMwyz@redis:6379/0'
 
 
 config = {
