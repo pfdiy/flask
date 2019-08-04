@@ -14,6 +14,7 @@ services:
       - ./nginx/log/cms:/log
       - ./app/static:/usr/src/app/static
       - ./:/usr/src/app
+      - /etc/localtime:/etc/localtime:ro
 
   flask:
     container_name: flask
@@ -23,6 +24,7 @@ services:
     volumes:
       - ./app/static:/usr/src/app/static
       - ./:/usr/src/app
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 5000:5000
     networks:
@@ -44,18 +46,19 @@ services:
       - backend
     volumes:
       - ./sql/data/:/var/lib/postgresql/data
+      - /etc/localtime:/etc/localtime:ro
 
   redis:
     container_name: redis
     image: redis:5.0.2-alpine
-    command: redis-server --requirepass kml7oQCKE5pXMwyz
+    command: redis-server --requirepass user
     ports:
       - 6379:6379
-    volumes:
-      - ./redis/data/:/data
     networks:
       - webnet
       - backend
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
 
 networks:
   webnet:
