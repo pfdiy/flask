@@ -9,7 +9,7 @@ import click
 from flask import Flask
 from flask import render_template
 from app.extensions import db, login_manager, ckeditor, csrf, migrate, \
-    qrcode,assets,cache
+    qrcode,assets,cache,debug
 from app.models.models import Admin, Category, Post, Site
 from app.blueprints.auth import auth_bp
 from app.blueprints.admin import admin_bp
@@ -20,6 +20,7 @@ from app.settings import config
 def create_app(config_name=None):
     if config_name is None:
         config_name = os.getenv('FLASK_CONFIG', 'development')
+        # config_name = os.getenv('FLASK_CONFIG', 'production')
 
     app = Flask('app')
     app.app_context().push()
@@ -37,6 +38,7 @@ def create_app(config_name=None):
     migrate.init_app(app, db)
     assets.init_app(app)
     cache.init_app(app)
+    debug.init_app(app)
     return app
 
 

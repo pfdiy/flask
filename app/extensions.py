@@ -11,6 +11,7 @@ from flask_migrate import Migrate
 from flask_qrcode import QRcode
 from flask_assets import Environment,Bundle
 from flask_caching import Cache
+from flask_debugtoolbar import DebugToolbarExtension
 
 db = SQLAlchemy()
 login_manager = LoginManager()
@@ -20,6 +21,7 @@ migrate = Migrate()
 qrcode = QRcode()
 assets= Environment()
 cache = Cache()
+debug = DebugToolbarExtension()
 
 
 @login_manager.user_loader

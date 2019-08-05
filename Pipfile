@@ -25,6 +25,7 @@ jsmin = "*"
 cssmin = "*"
 flask-caching = "*"
 redis = "*"
+flask-debugtoolbar = "*"
 
 [requires]
 python_version = "3.7"

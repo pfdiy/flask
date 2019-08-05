@@ -51,7 +51,7 @@ services:
 
   redis:
     container_name: redis
-    image: redis:5.0.2-alpine
+    image: redis:5.0.4-alpine
     restart: always
     command: redis-server --requirepass kml7oQCKE5pXMwyz
     ports:
