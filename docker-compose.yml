@@ -2,7 +2,7 @@ version: '3.1'
 services:
   nginx:
     container_name: nginx
-    image: fholzer/nginx-brotl
+    image: fholzer/nginx-brotli
     restart: always
     ports:
       - 80:80
