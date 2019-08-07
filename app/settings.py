@@ -13,10 +13,11 @@ class BaseConfig(object):
     PERMANENT_SESSION_LIFETIME = datetime.timedelta(minutes=20)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     CACHE_TYPE = 'redis'
-    DEBUG_TB_INTERCEPT_REDIRECTS = False
+    CACHE_NO_NULL_WARNING =True
     CKEDITOR_ENABLE_CSRF = True
-    CKEDITOR_SERVE_LOCAL = True
+    CKEDITOR_SERVE_LOCAL = False
     CKEDITOR_HEIGHT = 400
+    DEBUG_TB_INTERCEPT_REDIRECTS = True
     CKEDITOR_FILE_UPLOADER = 'index.upload_image'
     APP_UPLOAD_PATH = os.path.join(basedir, 'app/uploads')
     APP_ALLOWED_IMAGE_EXTENSIONS = ['png', 'jpg', 'jpeg']

@@ -84,6 +84,6 @@ laydate.render({
       ,type: 'datetime'
 });
 </script>
-{{ ckeditor.load() }}
+{{ ckeditor.load(custom_url=url_for('static', filename='admin/ckeditor/ckeditor.js')) }}
 {{ ckeditor.config(name='body') }}
 {% endblock %}
